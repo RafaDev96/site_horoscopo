@@ -17,3 +17,15 @@ app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
 });
 
+//rota para calcular dados astrológicos
+app.post('/calculate-astrology', (req, res) => {
+  const userData = req.body;
+  // Aqui você faria os cálculos astrológicos com base nos dados do usuário
+  // e retornaria os resultados.
+  const dummyAstrologicalData = { sunSign: "Aries", moonSign: "Taurus", risingSign: "Gemini" };
+  res.json(dummyAstrologicalData); 
+
+});
+
+//middleware para parsing JSON
+app.use(express.json());
